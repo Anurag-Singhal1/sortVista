@@ -4,7 +4,7 @@ import {getMergeSortAnimations, getBubbleSortAnimations, getQuickSortAnimations,
 import './SortingVisualizer.css';
 
 // Change this value for the speed of the animations.
-let ANIMATION_SPEED_MS = 1;
+let ANIMATION_SPEED_MS = 1;                   // 1 millisecond per step.
 
 // Change this value for the number of bars (value) in the array.
 let NUMBER_OF_ARRAY_BARS = 65;
@@ -169,13 +169,14 @@ export default class SortingVisualizer extends React.Component {
         this.resetArray();
       }
     }
+    // for fast animation, but initially full speed. So, after we decrease speed, then this will work.
     decreaseAnimation(){
-        ANIMATION_SPEED_MS -= 5;
+        ANIMATION_SPEED_MS -= 5;                 
         if(ANIMATION_SPEED_MS <=0){
           ANIMATION_SPEED_MS = 1;
         }
     }
-    increaseAnimation(){
+    increaseAnimation(){                          // to slow down animation speed 
       ANIMATION_SPEED_MS += 5;
     }
 
