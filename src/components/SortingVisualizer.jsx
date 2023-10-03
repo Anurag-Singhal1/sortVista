@@ -7,7 +7,7 @@ import './SortingVisualizer.css';
 let ANIMATION_SPEED_MS = 1;
 
 // Change this value for the number of bars (value) in the array.
-let NUMBER_OF_ARRAY_BARS = 75;
+let NUMBER_OF_ARRAY_BARS = 65;
 
 
 // This is the main color of the array bars.
@@ -158,13 +158,13 @@ export default class SortingVisualizer extends React.Component {
     }
     
     decreaseNumberOfBars(){
-      if(NUMBER_OF_ARRAY_BARS >= 12){
+      if(NUMBER_OF_ARRAY_BARS >= 12){                          // lowest => 15-10 = 5
         NUMBER_OF_ARRAY_BARS-=10;
         this.resetArray();
       }
     }
     increaseNumberOfBars(){
-      if(NUMBER_OF_ARRAY_BARS <= 100){
+      if(NUMBER_OF_ARRAY_BARS <= 100){                          // highest => 95+10 = 105
         NUMBER_OF_ARRAY_BARS+=10;
         this.resetArray();
       }
@@ -216,7 +216,7 @@ export default class SortingVisualizer extends React.Component {
           <div className="array-container justify-center flex relative top-20 pl-12 pr-12">
             {array.map((value, idx) =>(
                 <div 
-                  className="array-bar w-2 inline-block mx-1 my-0" 
+                  className="array-bar w-3 inline-block mx-1 my-0" 
                   key={idx}
                   style = {{height: value}}
                 />
